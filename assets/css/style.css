@@ -24,7 +24,6 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     overflow-x: hidden;
-    background-color: var(--accent);
 }
 
 .container {
@@ -35,7 +34,7 @@ body {
 
 /* Navigation */
 .nav {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     backdrop-filter: blur(10px);
