@@ -13,6 +13,7 @@
     --bg-light: #FAF9F7;
     --white: #ffffff;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --border: 1px solid rgba(255, 255, 255, 0.215);
 }
 
 html {
@@ -63,7 +64,7 @@ body {
 }
 
 .nav.scrolled {
-    /* background: linear-gradient(to bottom right, var(--primary), var(--accent)); */
+    background: var(--white);
     backdrop-filter: blur(20px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
@@ -73,7 +74,7 @@ body {
 }
 
 .nav.scrolled .logo {
-    background: linear-gradient(to right, var(--text-dark), var(--accent));
+    background: linear-gradient(var(--text-dark), var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -488,6 +489,93 @@ body {
     color: var(--white);
 }
 
+/* Contact */
+.contact {
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("../images/contact2.jpg") no-repeat center center/cover;
+}
+
+.contact .section-title {
+    color: var(--white);
+    margin: 10px;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.contact-item i {
+    font-size: 1rem;
+    color: var(--secondary);
+    width: 20px;
+}
+
+.contact-form {
+    display: grid;
+    padding: 2rem;
+    gap: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: var(--border);
+    border-radius: 7px;
+}
+
+.form-group {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: var(--white);
+}
+
+.form-input,
+.form-textarea {
+    padding: 0.6rem;
+    border: var(--border);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background: transparent;
+    color: var(--white);
+    outline: none;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: var(--secondary);
+}
+
+.form-button {
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.form-button:hover {
+    background: var(--accent);
+}
+
+
 /* Newsletter */
 .newsletter {
     background: var(--primary);
@@ -525,93 +613,6 @@ body {
 
 .newsletter-button:hover {
     background: #b8941f;
-}
-
-/* Contact */
-.contact {
-    /* background: var(--primary); */
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url("../images/contact2.jpg") no-repeat center center/cover;
-}
-
-.contact .section-title {
-    color: var(--white);
-    margin: 10px;
-}
-
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-}
-
-.contact-info h3 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 1rem;
-    color: var(--white);
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-light);
-}
-
-.contact-item i {
-    font-size: 1rem;
-    color: var(--secondary);
-    width: 20px;
-}
-
-.contact-form {
-    display: grid;
-    gap: 1.5rem;
-    background-color: ;
-    backdrop-filter: blur(10px);
-}
-
-.form-group {
-    display: grid;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    font-weight: 600;
-    color: var(--white);
-}
-
-.form-input,
-.form-textarea {
-    padding: 1rem;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: var(--transition);
-    font-family: inherit;
-    background: transparent;
-    color: var(--white);
-}
-
-.form-input:focus,
-.form-textarea:focus {
-    outline: none;
-    border-color: var(--secondary);
-}
-
-.form-button {
-    background: var(--accent);
-    color: var(--white);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.form-button:hover {
-    background: var(--accent);
 }
 
 /* Footer */
