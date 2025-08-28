@@ -9,7 +9,7 @@
     --secondary: #D4AF37;
     --accent: #8B4513;
     --text-dark: #1a1a1a;
-    --text-light: #666;
+    --text-light: #818181;
     --bg-light: #FAF9F7;
     --white: #ffffff;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -33,9 +33,9 @@ body {
 }
 
 /* Navigation */
+
 .nav {
-    position: sticky;
-    top: 0;
+    position: relative;
     width: 100%;
     backdrop-filter: blur(10px);
     z-index: 1000;
@@ -43,10 +43,41 @@ body {
     padding: 1rem 0;
 }
 
+.nav.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    animation: slideDown 0.3s;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
 .nav.scrolled {
-    background: rgba(255, 255, 255, 0.98);
+    /* background: linear-gradient(to bottom right, var(--primary), var(--accent)); */
+    backdrop-filter: blur(20px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
+
+.nav.scrolled .nav-link {
+    color: var(--text-dark);
+}
+
+.nav.scrolled .logo {
+    background: linear-gradient(to right, var(--text-dark), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 
 .nav-container {
     display: flex;
@@ -128,7 +159,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/bg.jpg');
     background-size: cover;
     background-position: center;
     opacity: 1;
@@ -232,7 +263,8 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.5rem, 4vw, 3.5rem);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1;
     color: var(--primary);
 }
 
@@ -362,7 +394,7 @@ body {
     transform: scale(1.05);
 }
 
-.pricing-card.featured .cta-button{
+.pricing-card.featured .cta-button {
     background: var(--white);
     color: var(--primary);
 }
@@ -497,7 +529,13 @@ body {
 
 /* Contact */
 .contact {
-    background: var(--primary);
+    /* background: var(--primary); */
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url("../images/contact2.jpg") no-repeat center center/cover;
+}
+
+.contact .section-title {
+    color: var(--white);
+    margin: 10px;
 }
 
 .contact-content {
@@ -517,17 +555,20 @@ body {
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    color: var(--text-light);
 }
 
 .contact-item i {
-    font-size: 1.2rem;
-    color: var(--white);
+    font-size: 1rem;
+    color: var(--secondary);
     width: 20px;
 }
 
 .contact-form {
     display: grid;
     gap: 1.5rem;
+    background-color: ;
+    backdrop-filter: blur(10px);
 }
 
 .form-group {
@@ -535,14 +576,21 @@ body {
     gap: 0.5rem;
 }
 
+.form-group label {
+    font-weight: 600;
+    color: var(--white);
+}
+
 .form-input,
 .form-textarea {
     padding: 1rem;
-    border: 2px solid #eee;
+    border: 1px solid #eee;
     border-radius: 10px;
     font-size: 1rem;
     transition: var(--transition);
     font-family: inherit;
+    background: transparent;
+    color: var(--white);
 }
 
 .form-input:focus,

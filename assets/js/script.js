@@ -20,10 +20,13 @@ navLinks.forEach(link => {
 
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
+
     if (window.scrollY > 50) {
         navbar.classList.add('scrolled');
+        navbar.classList.add('fixed');
     } else {
         navbar.classList.remove('scrolled');
+        navbar.classList.remove('fixed');
     }
 
     // Update scroll progress
