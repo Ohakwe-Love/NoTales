@@ -58,8 +58,11 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--white);
     text-decoration: none;
+    background: linear-gradient(to right, var(--white), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-menu {
@@ -70,10 +73,10 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-dark);
     font-weight: 500;
     position: relative;
     transition: var(--transition);
+    color: var(--white);
 }
 
 .nav-link:hover,
@@ -114,9 +117,6 @@ body {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--bg-light) 0%, #f0ebe6 100%);
-    display: flex;
-    align-items: center;
     position: relative;
     overflow: hidden;
 }
@@ -128,19 +128,20 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&h=1080&fit=crop');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/bg.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.1;
+    opacity: 1;
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
     align-items: center;
     position: relative;
     z-index: 2;
+    text-align: center;
 }
 
 .hero-text {
@@ -153,7 +154,7 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: clamp(3rem, 5vw, 5rem);
     font-weight: 700;
-    color: var(--primary);
+    color: var(--white);
     margin-bottom: 1.5rem;
     line-height: 1.1;
 }
@@ -161,7 +162,7 @@ body {
 .hero-subtitle {
     font-size: 1.25rem;
     color: var(--text-light);
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
     max-width: 500px;
 }
 
@@ -177,6 +178,7 @@ body {
     font-weight: 600;
     transition: var(--transition);
     transform: translateY(0);
+    border: none;
 }
 
 .cta-button:hover {
@@ -281,15 +283,15 @@ body {
 
 .books-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
     margin-top: 3rem;
 }
 
 .book-card {
     background: var(--white);
     border-radius: 15px;
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: var(--transition);
@@ -358,6 +360,11 @@ body {
     background: var(--primary);
     color: var(--white);
     transform: scale(1.05);
+}
+
+.pricing-card.featured .cta-button{
+    background: var(--white);
+    color: var(--primary);
 }
 
 .pricing-card.featured .pricing-price {
@@ -490,7 +497,7 @@ body {
 
 /* Contact */
 .contact {
-    background: var(--white);
+    background: var(--primary);
 }
 
 .contact-content {
@@ -502,7 +509,7 @@ body {
 .contact-info h3 {
     font-family: 'Playfair Display', serif;
     margin-bottom: 1rem;
-    color: var(--primary);
+    color: var(--white);
 }
 
 .contact-item {
@@ -514,7 +521,7 @@ body {
 
 .contact-item i {
     font-size: 1.2rem;
-    color: var(--secondary);
+    color: var(--white);
     width: 20px;
 }
 
@@ -545,7 +552,7 @@ body {
 }
 
 .form-button {
-    background: var(--primary);
+    background: var(--accent);
     color: var(--white);
     border: none;
     padding: 1rem 2rem;
